@@ -1,0 +1,119 @@
+---
+title: "Lab Website, GitHub Onboarding"
+author: "Katie Willi"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = F)
+
+library(tidyverse)
+library(vembedr)
+
+```
+
+Welcome to the Open Eco Data Lab! As part of this lab, you will be encouraged (required?) to participate in, contribute to, and publish your workflows on [GitHub](https://github.com/).
+
+#### **What are Git and GitHub?**
+
+Git is a version control system that helps manage projects, especially projects that involve multiple people. GitHub is a hosting service for these Git projects (in GitHub-speak, projects are housed in **repositories**). Here, we will outline how to set up Git, create your own GitHub account, and connect them to you local R environment to easily publish and share the code you develop. A great article on the benefits of using Git and GitHub has been written by Jennifer Bryan, which you can find [here](https://happygitwithr.com/big-picture.html) and we highly recommend reading!
+
+In fact, Jennifer Bryan has developed what we feel is the best guide for using Git and GitHub out there, [Happy Git and GitHub for the useR](https://happygitwithr.com/index.html). So as not to reinvent the wheel, this outline will mostly just direct you to that body of work. 
+
+## Setting up Git and GitHub
+
+Matt made an excellent YouTube video (also based on Jenny Bryan's work) on how to set up your own GitHub account, install Git, and allow them to interact with your personal R environment. It's also a great primer for how Git and GitHub work in R Studio.
+
+```{r}
+embed_url("https://www.youtube.com/watch?v=Y4sOTFV3FAM&t=1s") %>%
+  use_align("center")
+```
+
+#### **Key takeaways:** 
+
+1) Create a GitHub account. (see https://happygitwithr.com/github-acct.html)
+<br>
+2) Install Git on you local computer. (see https://happygitwithr.com/install-git.html)
+<br>
+3) In the R Studio Terminal, connect your GitHub account to your local computer. (see https://happygitwithr.com/hello-git.html)
+
+## Developing, viewing, and editing repositories
+
+As mentioned in Matt's video (~7:53), creating a repository is the first step when starting a brand-new Git project. Essentially, a **repository** is the master folder in which all the files and code related to a project live. For any repository on GitHub, there are two ways of copying it to your local computer: **cloning** and **forking**.
+
+### Cloning
+
+Cloning a repository maps a local version of that repository to your computer, allowing you to sync-up both the local (your computer) and remote (what's on GitHub) versions. This type of copying is useful for workflows where you are the only one working on them. If you clone a repository that you did not create yourself, you will be unable to make changes to the 'master' repository hosted on GitHub unless the developer has given your account collaborator approval, but it *will* allow you to refresh and update what's on your local computer if changes have been made to what's on the 'master' repository on GitHub. 
+
+However, for a repository that you have created yourself or are a collaborator on, cloning allows two-way syncing; you are able to make changes to the GitHub repository as well as update what's on your local computer if the GitHub repository changes.
+
+After editing, adding, or removing pieces of the project, you can re-sync those changes by committing and then pushing the project back to GitHub. A **commit** essentially packages and saves the changes you made; it also allows you to comment on what exactly you changed in the repository. Meanwhile, the **push** command sends those changes that were packaged by the commmit to GitHub and updates the remote repository on GitHub accordingly. Because cloning creates a direct connection between the GitHub 'master' repository and what you've cloned to your local computer, you can only push changes to repositories that are located in your own GitHub account, or to repositories that the developer of the repository has explicitly made you a collaborator on. 
+
+#### **How to clone and update your GitHub**: 
+
+1) Create a repository on GitHub. (https://happygitwithr.com/new-github-first.html#make-a-repo-on-github-2)
+<br>
+2) Clone the repository to your computer. (see https://happygitwithr.com/rstudio-git-github.html#clone-the-test-github-repository-to-your-computer-via-rstudio)
+<br>
+3) After changes have been made, commit and push them to your GitHub. (see https://happygitwithr.com/rstudio-git-github.html#make-local-changes-save-commit)
+
+### Forking
+
+Unlike cloning, forking a repository creates a totally separate, parallel copy of a repository that is housed within your own personal GitHub account. Specifically, if you've made changes to the code in a forked repository then committed and pushed those changes, it does not automatically make those same changes to the 'master' repository that it was forked from on GitHub. Instead, all changes are saved and stored only within the repository hosted within your own GitHub account. 
+
+Forking essentially creates a line of defense for changes in a workflow that would otherwise disrupt the workflows of other people working within that 'master' repository project. For the 'master' repository to be updated with the changes you made in your forked version, you must submit a pull request.
+
+A **pull request** is an invitation to the owner of the 'master' repository to review the changes you've made to the code and potentially merge them into their 'master' repository. If the owner/reviewer finds that the code you've developed would be a good addition to the workflow and/or that the code has not diverged/disrupted others' workflows, they can approve the pull request, and the 'master' repository will be updated accordingly.  
+
+Matt and a former grad student, Bryce Pulver, made another excellent video that walks through an example collaborative workflow using forking:
+
+```{r}
+embed_url("https://www.youtube.com/watch?v=a_YY_PIDeq8") %>%
+  use_align("center")
+```
+
+#### **How to fork and submit a pull request**
+
+1) Fork the repository on GitHub, then clone the forked repository to your local environment. (see https://happygitwithr.com/fork-and-clone.html#fork-and-clone-without-usethis)
+<br>
+2) Create a direct connection with the master repository to keep your personal repository up-to-date. (see https://happygitwithr.com/fork-and-clone.html#fork-and-clone-finish)
+<br>
+3) After changes have been made to the repository on your local computer, commit and push them to the forked repository on your personal GitHub. (see https://happygitwithr.com/rstudio-git-github.html#make-local-changes-save-commit, or Bryce at ~25:45)
+<br>
+3) Go to GitHub in your web browser. Submit a pull request by going to the master repository and selecting and creating a pull request. (Bryce does this at ~31:40)
+
+## Additional resources
+
+Below is a list of additional resources about GitHub and collaborative workflows.
+<br>
+ • GitHub website (https://docs.github.com/en)
+<br>
+ • Forked workflows (https://www.atlassian.com/git/tutorials/comparing-workflows/forking-workflow)
+<br>
+ • Using Git and GitHub for team collaboration (https://medium.com/anne-kerrs-blog/using-git-and-github-for-team-collaboration-e761e7c00281)
+<br>
+ • Starting a new group project on GitHub (https://www.digitalcrafts.com/blog/learn-how-start-new-group-project-github)
+ 
+## Flex your forking skills... by updating our website!
+
+As a member of our lab, we would like you to update our "People" page to include you! Here we will lay out the steps for you to fork our lab website repository, add yourself to our "People" page, and lastly, send a pull request to the Open Eco Data Lab to make these changes on the official website.
+
+#### Directions:
+
+ • Fork the [lab's website repository](https://github.com/OpenEcoDataLab/lab_website). 
+<br>
+ • Once in your own R environment, create a copy of Matt's bio folder (found in **content/authors/**), rename to your first name. 
+<br>
+ • Update `_index.md` to reflect your own bio.
+<br>
+ • Replace `avatar.jpg` with your own photo; name it `avatar.jpg`.
+<br>
+ • Put a PDF of your resume in **static/uploads/**, name it `lastname_resume.pdf`.
+<br>
+ • Commit the addition of you bio, then push the branch. 
+<br>
+ • In GitHub, submit a pull request with your suggested changes (i.e., including you!) to the website. 
+
+## `r xfun::embed_file('datadocs/Open Eco Data Lab GitHub Workflow Guide.docx', text=paste("Download the Open Eco Data Lab's GitHub Workflow Guide"))`
+
